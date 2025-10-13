@@ -1,0 +1,259 @@
+DOCUMENTO DE ARQUITETURA - PIPELINE DE BIG DATA
+Análise Preditiva de Churn em Telecomunicações
+
+==========================================
+INFORMAÇÕES DO PROJETO
+==========================================
+
+Projeto: Análise Preditiva de Churn em Telecomunicações
+Disciplina: Fundamentos de Big Data
+Data: 13/10/2024
+Equipe: Leonardo Azevedo e [Outros Membros]
+
+==========================================
+ARQUITETURA DO PIPELINE DE DADOS
+==========================================
+
+O projeto implementa uma arquitetura Medallion com 3 camadas:
+
+┌─────────────────────────────────────────────────────────┐
+│                    PIPELINE DE DADOS                     │
+└─────────────────────────────────────────────────────────┘
+
+┌──────────────┐       ┌──────────────┐       ┌──────────────┐
+│   📥 BRONZE  │  -->  │   🔧 SILVER  │  -->  │   🏆 GOLD    │
+│  Dados Brutos│       │Transformados │       │   Insights   │
+└──────────────┘       └──────────────┘       └──────────────┘
+
+CAMADA BRONZE (Ingestão):
+- Fonte: Dataset Telco Customer Churn (Kaggle)
+- Registros: 7.043 clientes
+- Formato: CSV original
+- Localização: /dados/bronze/
+- Arquivos: telco_churn_raw.csv, relatorio_ingestao.txt
+
+CAMADA SILVER (Transformação):
+- Processamento: Limpeza, validação, engenharia de features
+- Features criadas: 15+ variáveis derivadas
+- Formato: CSV + Parquet (compressão ~60%)
+- Localização: /dados/silver/
+- Arquivos: telco_churn_transformed.csv/.parquet, relatorio_transformacao.txt
+
+CAMADA GOLD (Análise):
+- Visualizações: 3 gráficos principais
+- Datasets agregados: Métricas por contrato, perfil de risco
+- Insights: Recomendações estratégicas
+- Localização: /dados/gold/
+- Arquivos: 6 arquivos analíticos + relatório final
+
+==========================================
+TECNOLOGIAS UTILIZADAS
+==========================================
+
+AMBIENTE DE DESENVOLVIMENTO:
+- Google Colab (plataforma principal - sem custos)
+- Python 3.x (linguagem de programação)
+- Jupyter Notebooks (desenvolvimento)
+
+BIBLIOTECAS DE PROCESSAMENTO:
+- Pandas: Manipulação e transformação de dados
+- NumPy: Operações numéricas vetorizadas
+- PyArrow: Leitura/escrita de arquivos Parquet
+- Scikit-learn: Normalização e pré-processamento
+
+BIBLIOTECAS DE VISUALIZAÇÃO:
+- Matplotlib: Gráficos estáticos
+- Seaborn: Visualizações estatísticas
+
+FORMATO DE ARMAZENAMENTO:
+- CSV: Dados brutos e intermediários
+- Parquet: Dados transformados (compressão ~60%)
+
+==========================================
+JUSTIFICATIVA DAS ESCOLHAS TECNOLÓGICAS
+==========================================
+
+GOOGLE COLAB:
+- Vantagens: Gratuito, ambiente pré-configurado, fácil compartilhamento
+- Desvantagens: Limitações de recursos, dependência de internet
+- Justificativa: Ideal para projetos acadêmicos sem custos
+
+PYTHON + PANDAS:
+- Vantagens: Sintaxe intuitiva, bibliotecas robustas, comunidade ativa
+- Desvantagens: Performance inferior a linguagens compiladas
+- Justificativa: Padrão da indústria para análise de dados
+
+ARQUITETURA MEDALLION:
+- Vantagens: Organização clara, rastreabilidade, escalabilidade
+- Desvantagens: Complexidade inicial maior
+- Justificativa: Melhores práticas da indústria
+
+PARQUET:
+- Vantagens: Compressão eficiente, schema evolution, performance
+- Desvantagens: Menos compatibilidade com ferramentas legadas
+- Justificativa: Formato otimizado para Big Data
+
+==========================================
+DIVISÃO DE TAREFAS DA EQUIPE
+==========================================
+
+MEMBER 1 - LEONARDO AZEVEDO:
+- Responsabilidade: Ingestão e Documentação
+- Tarefas:
+  * Implementação do notebook 01_ingestao.ipynb
+  * Implementação do notebook 02_transformacao.ipynb
+  * Criação da estrutura de pastas
+  * Documentação técnica e README.md
+  * Criação do checklist_av1.md
+
+MEMBER 2 - WALTER ANDRÉ DE SÁ BARRETO FILHO:
+- Responsabilidade: Transformação e Engenharia de Features
+- Tarefas:
+  * Criação do Repositório
+  * Implementação do notebook 02_transformacao.ipynb
+  * Criação de features derivadas
+  * Normalização e padronização dos dados
+  * Validação de qualidade
+
+MEMBER 3 - MARIANA BELO:
+- Responsabilidade: Análise e Visualização
+- Tarefas:
+  * Implementação do notebook 03_analise_visualizacao.ipynb
+  * Criação de visualizações
+  * Geração de insights e métricas
+  * Relatório final
+
+==========================================
+FLUXO DE DADOS DETALHADO
+==========================================
+
+ETAPA 1 - INGESTÃO:
+1. Download/verificação do dataset Telco Customer Churn
+2. Carregamento dos dados brutos (7.043 registros)
+3. Validação inicial (duplicatas, tipos de dados)
+4. Salvamento na camada Bronze
+5. Geração de relatório de ingestão
+
+ETAPA 2 - TRANSFORMAÇÃO:
+1. Carregamento dos dados da camada Bronze
+2. Limpeza e tratamento de valores ausentes
+3. Engenharia de features (15+ variáveis criadas)
+4. Codificação de variáveis categóricas
+5. Normalização MinMaxScaler
+6. Salvamento na camada Silver (CSV + Parquet)
+7. Geração de relatório de transformação
+
+ETAPA 3 - ANÁLISE:
+1. Carregamento dos dados da camada Silver
+2. Análise exploratória de dados
+3. Criação de visualizações (3 gráficos)
+4. Geração de datasets agregados
+5. Cálculo de métricas de churn
+6. Salvamento na camada Gold
+7. Geração de relatório final com insights
+
+==========================================
+MÉTRICAS E KPIs
+==========================================
+
+MÉTRICAS TÉCNICAS:
+- Registros processados: 7.043 clientes
+- Features criadas: 15+ variáveis derivadas
+- Taxa de compressão Parquet: ~60%
+- Tempo de processamento: < 5 minutos
+- Linhas de código: ~1.200 linhas
+
+MÉTRICAS DE NEGÓCIO:
+- Taxa geral de churn: 26.5%
+- Contratos mensais: ~42% de churn
+- Contratos anuais: ~11% de churn
+- Contratos bienais: ~3% de churn
+- Clientes novos (0-12m): Alto risco
+
+==========================================
+PRINCIPAIS DESCOBERTAS
+==========================================
+
+1. TIPO DE CONTRATO É O FATOR MAIS CRÍTICO:
+   - Diferença de 39 pontos percentuais entre mensal e bienal
+   - Contratos longos reduzem significativamente o churn
+
+2. TEMPO DE PERMANÊNCIA IMPACTA SIGNIFICATIVAMENTE:
+   - Primeiros 12 meses são críticos para retenção
+   - Clientes antigos (37m+) têm baixo risco de churn
+
+3. PERFIL DE ALTO RISCO IDENTIFICADO:
+   - Contrato mensal + tenure <= 12 meses
+   - Taxa de churn elevada neste segmento
+
+==========================================
+RECOMENDAÇÕES ESTRATÉGICAS
+==========================================
+
+1. MIGRAÇÃO PARA CONTRATOS LONGOS:
+   - Oferecer desconto de 15-20% em contratos anuais
+   - Criar programa de fidelidade para contratos bienais
+
+2. ONBOARDING INTENSIVO:
+   - Acompanhamento especial nos primeiros 90 dias
+   - Suporte proativo para clientes novos
+
+3. BUNDLING DE SERVIÇOS:
+   - Pacotes com 4+ serviços para aumentar retenção
+   - Descontos progressivos por número de serviços
+
+4. PROGRAMA DE SEGURANÇA:
+   - Trial gratuito de 30 dias para serviços de segurança
+   - Educação sobre benefícios de proteção
+
+==========================================
+PRÓXIMAS ETAPAS (AV2)
+==========================================
+
+MELHORIAS PLANEJADAS:
+- Implementar modelo de Machine Learning preditivo
+- Criar dashboard interativo com Streamlit
+- Desenvolver API para scoring em tempo real
+- Sistema de alertas automatizados
+- A/B Testing de estratégias de retenção
+
+TECNOLOGIAS AVANÇADAS (FUTURO):
+- Apache Spark para processamento distribuído
+- Apache Kafka para streaming de dados
+- MLflow para versionamento de modelos
+- Docker para containerização
+- AWS/GCP para infraestrutura em nuvem
+
+==========================================
+CONCLUSÃO
+==========================================
+
+O pipeline de Big Data implementado demonstra com sucesso:
+
+1. ARQUITETURA ROBUSTA:
+   - Implementação da arquitetura Medallion
+   - Separação clara de responsabilidades
+   - Rastreabilidade completa dos dados
+
+2. PROCESSAMENTO EFICIENTE:
+   - Tratamento de 7.043 registros
+   - Criação de 15+ features derivadas
+   - Compressão de 60% com Parquet
+
+3. INSIGHTS ACIONÁVEIS:
+   - Identificação de fatores críticos de churn
+   - Recomendações estratégicas específicas
+   - Métricas de sucesso definidas
+
+4. DOCUMENTAÇÃO COMPLETA:
+   - Código bem comentado e organizado
+   - Relatórios técnicos detalhados
+   - Arquitetura documentada
+
+O projeto está pronto para a AV1 e preparado para evoluções na AV2.
+
+==========================================
+Pipeline de Big Data - Fundamentos de Big Data
+Equipe: Leonardo Azevedo e [Outros Membros]
+Data: 13/10/2024
+==========================================

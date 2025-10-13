@@ -6,7 +6,7 @@
 
 ## 👥 Equipe
 
-- **Membro 1:** [Nome Completo] - Responsável por Ingestão e Documentação
+- **Membro 1:** Leonardo Azevedo - Responsável por Ingestão e Documentação
 - **Membro 2:** [Nome Completo] - Responsável por Transformação e Engenharia de Features
 - **Membro 3:** [Nome Completo] - Responsável por Análise e Visualização
 
@@ -312,10 +312,10 @@ Image('/content/dados/gold/dashboard_final.png')
 
 Para dúvidas ou sugestões sobre o projeto:
 
-- **Repositório:** [GitHub Link]
-- **Equipe:** [emails dos membros]
+- **Repositório:** https://github.com/[seu-usuario]/telco-churn-analysis
+- **Equipe:** leonardo.azevedo@cesar.org.br
 - **Disciplina:** Fundamentos de Big Data
-- **Professor(a):** [Nome]
+- **Professor(a):** [Nome do Professor]
 
 ---
 
