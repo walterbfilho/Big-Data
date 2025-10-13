@@ -1,0 +1,78 @@
+
+================================================================================
+RELATÓRIO FINAL - ANÁLISE DE CHURN TELECOM
+================================================================================
+Data: 2025-10-13 10:53:05
+Equipe: Mariana Belo, Leonardo Azevedo, Walter Barreto
+
+RESUMO EXECUTIVO
+================================================================================
+Total de Clientes Analisados: 7,043
+Taxa de Churn: 26.54%
+Clientes Ativos: 5,174
+Clientes que Cancelaram: 1,869
+
+PRINCIPAIS DESCOBERTAS
+================================================================================
+1. IMPACTO DO TIPO DE CONTRATO
+   - Contrato Mensal: 42.7% de churn
+   - Contrato Anual: 11.3% de churn
+   - Contrato Bienal: 2.8% de churn
+
+2. IMPACTO DO TEMPO DE PERMANÊNCIA
+   - Clientes Novos (0-12 meses): 47.4% de churn
+   - Clientes Médio Prazo (13-36 meses): 25.5% de churn
+   - Clientes Longo Prazo (36+ meses): 11.9% de churn
+
+3. IMPACTO FINANCEIRO
+   - Receita Mensal Perdida: R$ 139,130.85
+   - Receita Total Perdida: R$ 2,862,926.90
+   - Ticket Médio de Churns: R$ 74.44
+
+4. PERFIS DE RISCO
+   - Alto Risco: 808 clientes (41.7% de churn)
+   - Baixo Risco: 1,886 clientes (9.1% de churn)
+
+RECOMENDAÇÕES PRIORITÁRIAS
+================================================================================
+
+1. PRIORIZAR CONTRATOS DE LONGO PRAZO
+   - Taxa de churn mensal: ~42%
+   - Taxa de churn anual: ~11%
+   - Ação: Oferecer incentivos para migração de contratos mensais
+
+2. PROMOVER MÚLTIPLOS SERVIÇOS
+   - Clientes com 1-2 serviços: alta taxa de churn
+   - Clientes com 4+ serviços: baixa taxa de churn
+   - Ação: Criar pacotes bundled com descontos progressivos
+
+3. FOCO EM SERVIÇOS DE SEGURANÇA
+   - Clientes com segurança têm menor propensão ao churn
+   - Ação: Incluir período de teste gratuito de segurança
+
+4. INTERVENÇÃO NOS PRIMEIROS 12 MESES
+   - Maior taxa de churn ocorre em clientes novos
+   - Ação: Programa de onboarding e acompanhamento intensivo
+
+5. SEGMENTAÇÃO DE CLIENTES PREMIUM
+   - Identificar e reter clientes de alto valor
+   - Ação: Atendimento diferenciado e benefícios exclusivos
+
+
+PRÓXIMOS PASSOS
+================================================================================
+1. Implementar modelo preditivo de Machine Learning
+2. Criar sistema de alertas para clientes de alto risco
+3. Desenvolver campanhas de retenção segmentadas
+4. Monitorar KPIs de churn mensalmente
+
+ARQUIVOS GERADOS
+================================================================================
+- 7 Visualizações PNG em /dados/gold/
+- 3 Datasets agregados em /dados/gold/
+- Dados transformados em /dados/silver/ (CSV e Parquet)
+- Dados brutos em /dados/bronze/
+
+================================================================================
+FIM DO RELATÓRIO
+================================================================================

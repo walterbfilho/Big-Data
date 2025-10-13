@@ -196,10 +196,7 @@ A empresa enfrenta uma taxa de churn de 26.54%, resultando em perda mensal de R$
 |------------|---------------|-----------|
 | **Apache Spark** | Processamento distribuído | Escalabilidade para datasets maiores |
 | **Apache Airflow** | Orquestração de pipelines | Automação e monitoramento |
-| **Apache Kafka** | Streaming de dados | Processamento em tempo real |
-| **MLflow** | Gestão de modelos ML | Versionamento e deploy de modelos |
 | **Tableau/Power BI** | Dashboards interativos | Visualizações dinâmicas |
-| **Apache Superset** | BI self-service | Análises ad-hoc pelos usuários |
 
 ---
 
@@ -254,14 +251,6 @@ O pipeline atual pode ser facilmente escalado para:
 ---
 
 ## 7. Próximos Passos
-
-### 7.1 Melhorias Técnicas
-1. Implementar modelo de Machine Learning
-2. Criar sistema de alertas automáticos
-3. Desenvolver API para consultas
-4. Implementar monitoramento contínuo
-
-### 7.2 Expansão do Pipeline
 1. Integração com fontes de dados em tempo real
 2. Implementação de streaming processing
 3. Criação de dashboards interativos
@@ -274,5 +263,3 @@ O pipeline atual pode ser facilmente escalado para:
 O pipeline implementado demonstra uma solução completa de Big Data para análise de churn, seguindo as melhores práticas da indústria. A arquitetura Medallion garante qualidade e rastreabilidade dos dados, enquanto as tecnologias escolhidas proporcionam eficiência e escalabilidade.
 
 **Status atual:** ✅ Pipeline completo implementado e funcional  
-**Próxima entrega:** Modelo preditivo e sistema de alertas  
-**Data:** 13/10/2024
