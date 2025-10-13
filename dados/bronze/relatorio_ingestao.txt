@@ -1,0 +1,10 @@
+
+RELATÓRIO DE INGESTÃO DE DADOS
+Data: 2025-10-13 00:58:59
+==========================================
+Fonte: telco_churn.csv
+Registros ingeridos: 7,043
+Colunas: 23
+Duplicatas: 0
+Taxa de Churn: 26.54%
+==========================================
