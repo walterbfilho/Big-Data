@@ -6,9 +6,9 @@
 
 ## 👥 Equipe
 
-- **Membro 1:** Leonardo Menezes Soares de Azevedo - Responsável por Ingestão e Documentação
-- **Membro 2:** Mariana Belo Lopes Barreto - Responsável por Transformação e Engenharia de Features
-- **Membro 3:** Walter André de Sá Barreto Filho - Responsável por Análise e Visualização
+- **Leonardo Azevedo** - Responsável por Ingestão e Arquitetura de Dados
+- **Mariana Belo** - Responsável por Análise e Visualização  
+- **Walter Barreto** - Responsável por Transformação e Engenharia de Features
 
 ---
 
@@ -150,20 +150,16 @@ telco-churn-analysis/
 │       ├── dashboard_final.png
 │       └── relatorio_final.txt
 │
-├── notebooks/
+├── src/                                # Notebooks e código fonte
 │   ├── 01_ingestao.ipynb              # Notebook de ingestão
 │   ├── 02_transformacao.ipynb         # Notebook de transformação
-│   └── 03_analise_visualizacao.ipynb  # Notebook de análise
+│   ├── 03_analise_visualizacao.ipynb  # Notebook de análise
+│   └── telco_churn.csv               # Dataset original
 │
-├── src/                                # Scripts Python
-│   ├── ingestao.py
-│   ├── transformacao.py
-│   └── utils.py
-│
-└── documentacao/
-    ├── arquitetura_pipeline.pdf        # Diagrama detalhado
-    ├── apresentacao_av1.pdf            # Slides da apresentação
-    └── checklist_av1.md                # Checklist de entregas
+└── documentacao/                       # Documentação do projeto
+    ├── arquitetura_pipeline.md         # Documento de arquitetura
+    ├── checklist_av1.md                # Checklist de entregas
+    └── divisao_tarefas.md             # Divisão de responsabilidades
 ```
 
 ---
@@ -182,21 +178,12 @@ telco-churn-analysis/
 
 ### 2️⃣ **Executar Pipeline Completo**
 
-#### **Opção A: Executar notebooks sequencialmente**
+#### **Executar notebooks sequencialmente**
 
-1. Abrir `01_ingestao.ipynb` no Colab
+1. Abrir `src/01_ingestao.ipynb` no Colab
 2. Executar todas as células (Runtime > Run all)
-3. Repetir para `02_transformacao.ipynb`
-4. Repetir para `03_analise_visualizacao.ipynb`
-
-#### **Opção B: Executar scripts Python**
-
-```python
-# No Google Colab
-%run src/ingestao.py
-%run src/transformacao.py
-%run src/analise.py
-```
+3. Repetir para `src/02_transformacao.ipynb`
+4. Repetir para `src/03_analise_visualizacao.ipynb`
 
 ### 3️⃣ **Visualizar Resultados**
 
