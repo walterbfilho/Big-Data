@@ -6,9 +6,9 @@
 
 ## 👥 Equipe
 
-- **Membro 1:** [Nome Completo] - Responsável por Ingestão e Documentação
-- **Membro 2:** [Nome Completo] - Responsável por Transformação e Engenharia de Features
-- **Membro 3:** [Nome Completo] - Responsável por Análise e Visualização
+- **Membro 1:** Leonardo Menezes Soares de Azevedo - Responsável por Ingestão e Documentação
+- **Membro 2:** Mariana Belo Lopes Barreto - Responsável por Transformação e Engenharia de Features
+- **Membro 3:** Walter André de Sá Barreto Filho - Responsável por Análise e Visualização
 
 ---
 
@@ -174,8 +174,7 @@ telco-churn-analysis/
 
 ```python
 # Clonar o repositório
-!git clone https://github.com/[seu-usuario]/telco-churn-analysis.git
-%cd telco-churn-analysis
+!git clone https://github.com/walterbfilho/Big-Data.git
 
 # Instalar dependências (se necessário)
 !pip install pandas numpy matplotlib seaborn pyarrow scikit-learn
@@ -312,10 +311,10 @@ Image('/content/dados/gold/dashboard_final.png')
 
 Para dúvidas ou sugestões sobre o projeto:
 
-- **Repositório:** [GitHub Link]
-- **Equipe:** [emails dos membros]
+- **Repositório:** [\[GitHub Link\]](https://github.com/walterbfilho/Big-Data.git)
+- **Equipe:** lmsa@cesar.school | mblb@cesar.school | wasbf@cesar.school
 - **Disciplina:** Fundamentos de Big Data
-- **Professor(a):** [Nome]
+- **Professor(a):** Laura Alves Pacifico da Silva
 
 ---
 
