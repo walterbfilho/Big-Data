@@ -1,6 +1,6 @@
 
 RELATÓRIO DE TRANSFORMAÇÃO DE DADOS
-Data: 2025-11-30 23:18:25
+Data: 2025-12-01 08:37:57
 ==========================================
 Registros processados: 7,043
 Features originais: 23
@@ -40,7 +40,7 @@ DATASETS GOLD GERADOS:
 ==========================================
 
 OTIMIZAÇÕES APLICADAS:
-- Formato Parquet: Redução de 70.37209917625586%.1f% no tamanho
+- Formato Parquet: Redução de 80.71412669032102%.1f% no tamanho
 - Normalização: Escalas 0-1 para ML futuro
 - Agregações: Pré-computadas para análise rápida
 
