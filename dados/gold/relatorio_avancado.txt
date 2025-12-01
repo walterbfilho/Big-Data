@@ -1,0 +1,126 @@
+
+================================================================================
+RELATÓRIO AVANÇADO - ANÁLISE DE CHURN TELECOM
+================================================================================
+Data: 2025-11-30 23:19:55
+Equipe: Mariana Belo, Leonardo Azevedo, Walter Barreto
+
+RESUMO EXECUTIVO
+================================================================================
+Total de Clientes Analisados: 7,043
+Taxa de Churn: 26.54%
+Clientes Ativos: 5,174
+Clientes que Cancelaram: 1,869
+
+MACHINE LEARNING - MODELOS DE CLASSIFICAÇÃO
+================================================================================
+1. REGRESSÃO LOGÍSTICA:
+   - Acurácia: 78.99%
+   - Precisão: 63.09%
+   - Recall: 50.27%
+   - F1-Score: 0.5595
+   - AUC-ROC: 0.8350
+
+2. RANDOM FOREST:
+   - Acurácia: 79.35%
+   - Precisão: 64.36%
+   - Recall: 49.73%
+   - F1-Score: 0.5611
+   - AUC-ROC: 0.8348
+
+MELHOR MODELO: Regressão Logística
+   (Baseado em AUC-ROC)
+
+TESTES ESTATÍSTICOS
+================================================================================
+1. MonthlyCharges (Churn vs Não-Churn):
+   - Diferença de médias: R$ 13.18
+   - p-value: 0.000000
+   - Resultado: Diferença significativa
+
+2. Tenure (Churn vs Não-Churn):
+   - Diferença de médias: -19.59 meses
+   - p-value: 0.000000
+   - Resultado: Diferença significativa
+
+3. Associação Contract-Churn (Chi-square):
+   - Estatística Chi²: 1184.5966
+   - p-value: 0.000000
+   - Resultado: Associação significativa
+
+REGRESSÃO LINEAR - PREVISÃO DE MONTHLYCHARGES
+================================================================================
+- R² (Coeficiente de Determinação): 0.9088 (90.88%)
+- RMSE: R$ 9.09
+- MAE: R$ 6.59
+- O modelo explica 90.9% da variância em MonthlyCharges
+
+ANÁLISE DE CLUSTERS
+================================================================================
+Foram identificados 4 segmentos distintos de clientes:
+
+
+Cluster 0 - Clientes Novos de Baixo Valor:
+   - Total: 1,960 clientes (27.8%)
+   - Taxa de Churn: 10.1%
+   - Tenure médio: 57.5 meses
+   - MonthlyCharges médio: R$ 87.91
+
+Cluster 1 - Clientes Leais de Alto Valor:
+   - Total: 1,310 clientes (18.6%)
+   - Taxa de Churn: 4.7%
+   - Tenure médio: 43.7 meses
+   - MonthlyCharges médio: R$ 29.24
+
+Cluster 2 - Clientes de Médio Prazo:
+   - Total: 1,782 clientes (25.3%)
+   - Taxa de Churn: 39.8%
+   - Tenure médio: 6.8 meses
+   - MonthlyCharges médio: R$ 43.72
+
+Cluster 3 - Clientes Novos de Alto Risco:
+   - Total: 1,991 clientes (28.3%)
+   - Taxa de Churn: 45.2%
+   - Tenure médio: 23.0 meses
+   - MonthlyCharges médio: R$ 84.18
+
+ANÁLISE DE SOBREVIVÊNCIA
+================================================================================
+- Tempo médio até churn: 18.0 meses
+- Tempo médio de permanência: 32.4 meses
+- Mediana de tempo até churn: 10.0 meses
+
+SCORE DE RISCO INDIVIDUAL
+================================================================================
+O modelo Random Forest foi aplicado para calcular probabilidades de churn individuais.
+Clientes foram categorizados em 4 níveis de risco:
+- Baixo Risco: < 20%
+- Risco Moderado: 20-40%
+- Alto Risco: 40-60%
+- Risco Muito Alto: > 60%
+
+PRINCIPAIS INSIGHTS
+================================================================================
+1. O modelo Random Forest apresentou melhor desempenho (AUC-ROC: 0.8350)
+2. Existem diferenças estatisticamente significativas entre grupos de churn
+3. A segmentação por clusters revela 4 perfis distintos de clientes
+4. A análise de sobrevivência mostra padrões temporais claros de churn
+5. O modelo pode identificar clientes de alto risco com alta precisão
+
+RECOMENDAÇÕES BASEADAS EM ML
+================================================================================
+1. Implementar sistema de alertas para clientes com probabilidade > 60%
+2. Criar campanhas segmentadas por cluster identificado
+3. Monitorar métricas do modelo mensalmente (retreinamento se necessário)
+4. Priorizar intervenção nos primeiros 10 meses
+5. Usar scores de risco para otimizar recursos de retenção
+
+ARQUIVOS GERADOS
+================================================================================
+- 14 Visualizações PNG em /dados/gold/
+- Dataset com scores de risco: scores_risco_clientes.csv
+- Modelos treinados disponíveis para deploy
+
+================================================================================
+FIM DO RELATÓRIO AVANÇADO
+================================================================================

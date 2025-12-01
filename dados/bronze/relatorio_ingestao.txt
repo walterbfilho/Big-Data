@@ -1,6 +1,6 @@
 
 RELATÓRIO DE INGESTÃO DE DADOS
-Data: 2025-10-13 10:51:15
+Data: 2025-11-30 23:05:33
 ==========================================
 Fonte: telco_churn.csv
 Registros ingeridos: 7,043
